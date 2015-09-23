@@ -7,11 +7,11 @@ class prog3
      String s,r1;
      for (i=1; i<10; i++) {
           for (j=1; j<10; j++) {
-          i1=String.valueOf(j); //поменял местами i и j
-          j1=String.valueOf(i); //так луччше))
+          i1=String.valueOf(i); //поменял местами i и j
+          j1=String.valueOf(j); //так луччше))
           r=i*j;
           r1=String.valueOf(r);
-          s=i1+"x"+j1+"="+r1+" ";
+          s=j1+"x"+i1+"="+r1+" ";
           if (r<10) {
           s=s+" ";
           }
