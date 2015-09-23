@@ -1,6 +1,6 @@
 class prog4a
 {
-     public static void main(String[] args) { //Решил попробовать инт
+     public static void main(String[] args) { 
      double x=Double.valueOf(args[0]);
      double y=Double.valueOf(args[1]);
      double d1,d2,d3,d4;
