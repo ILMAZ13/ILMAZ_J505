@@ -5,3 +5,4 @@ info/
 objects/
 refs/
 *.txt
+*.class
