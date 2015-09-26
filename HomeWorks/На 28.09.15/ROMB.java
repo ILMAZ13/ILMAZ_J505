@@ -20,19 +20,41 @@ class ROMB
                 for (j=1; j<=k; j++) {
                     s=s+"X";
                 }
+                if ((k!=0) || ((k==0) && (a%2==0))){
+                    if (p==-1) {
+                        s=s+"/";
+                    } 
+                    else {
+                        s=s+"\\";
+                    }
+                }
+                else {
+                    s=s+"(";
+                }
                 for (j=1; j<=o; j++) {
                     s=s+"O";
+                }
+                if ((k!=0) || ((k==0) && (a%2==0))){
+                    if (p==-1) {
+                        s=s+"\\";
+                    } 
+                    else {
+                        s=s+"/";
+                    }
+                }
+                else {
+                    s=s+")";
                 }
                 for (j=1; j<=k; j++) {
                     s=s+"X";
                 }
                 System.out.println(s);
                 s="";
-                k=k+p;
-                o=o-(2*p);
                 if (k==0) {
                     p=1;
                 }
+                k=k+p;
+                o=o-(2*p);
                 if ((i == (a/2)) && (a%2==0)) {
                     k=k-1;
                     o=o+2;
