@@ -66,9 +66,35 @@ class Product{
     public boolean getLegalStatus(){
         return this.legal;
     }
+	
+	public String getDate(){
+        int i = this.getBestUntil().toString().indexOf("DAY_OF_MONTH=") + 13;
+		String s = this.getBestUntil().toString().substring(i + 1, i + 2);
+		if (('0' <= s.charAt(0)) && ('9' >= s.charAt(0))){
+			return this.getBestUntil().toString().substring(i, i+2);
+		} else {
+			return this.getBestUntil().toString().substring(i, i+1);
+		}
+        
+    }
+	
+	public String getMonth(){
+		int i = this.getBestUntil().toString().indexOf("MONTH=") + 6;
+        String s = this.getBestUntil().toString().substring(i + 1, i + 2);
+		if (('0' <= s.charAt(0)) && ('9' >= s.charAt(0))){
+			return this.getBestUntil().toString().substring(i, i+2);
+		} else {
+			return this.getBestUntil().toString().substring(i, i+1);
+		}
+	}
+	
+	public String getYear(){
+		int i = this.getBestUntil().toString().indexOf("YEAR=") + 5;
+			return this.getBestUntil().toString().substring(i, i+4);
+	}
 
     public String toString() {
-        return name + " " + manufacturer + " " + price + "r best until " + bestUntil + " " + weight + "kg is legal=" + legal + " is fresh=" + this.getFreshStatus();
+        return name + "; " + manufacturer + "; " + price + "rubls; best until:" + getDate() + "." + getMonth() + "." + getYear() + "; " + weight + "kg; is legal=" + legal + "; is fresh=" + this.getFreshStatus();
     }
 
     public int hashCode() {
@@ -109,10 +135,14 @@ class Product{
     
     public static void main(String[] args){
         GregorianCalendar cal = new GregorianCalendar();
-        cal.set(2015, 9, 10);
-        
-        Product a = new  Product("pie","ru", 1000, 35);
+        cal.set(2015, 11, 1);
+		GregorianCalendar cal1 = new GregorianCalendar();
+        cal1.set(2015,9,14);
+        Product a = new  Product("pie","ru", 1000, cal, 35);
+		Product b = new  Product("MEAT","kh", 5000, cal1, 35);
 		System.out.println(a);
+		System.out.println(b);
+		System.out.println(a.equals(b));
     }
     
     
