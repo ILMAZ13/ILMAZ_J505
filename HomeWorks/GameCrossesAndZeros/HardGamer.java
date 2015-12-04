@@ -35,6 +35,12 @@ public class HardGamer {
                     }
                 }
             }
+            if (xy[0]<0){
+                xy = mi.getPossibleWay(pg);
+                if (xy[0]<0){
+                    xy = mi.getEmptyPoint(pg);
+                }
+            }
             pg.putO(xy);
             pg.printPlaygrounnd();
             if(pg.getWinner() != '_'){
