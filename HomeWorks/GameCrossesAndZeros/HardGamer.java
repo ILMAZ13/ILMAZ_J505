@@ -54,6 +54,10 @@ public class HardGamer {
             System.out.println(ex.getMessage());
         }
         pg.printPlaygrounnd();
-        System.out.println(pg.getWinner());
+		if (pg.getWinner() != '_'){
+			System.out.println(pg.getWinner()  + " is win!!!");
+		} else {
+			System.out.println("DRAW");
+		}
     }
 }
