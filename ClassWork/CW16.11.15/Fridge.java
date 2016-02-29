@@ -12,7 +12,7 @@ public class Fridge{
         food = new Food[maxVolume];
     }
     public void add(Food a){
-        if (!(a.getVolume() > 0)){
+        if (a.getVolume() <= 0){
             System.err.println("It`s impossible"); //Защита от выхода за массив
         } else {
             int price = (int) ( a.getFats() * a.getProteins() / 10 + 1);
